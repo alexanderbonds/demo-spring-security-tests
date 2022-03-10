@@ -50,7 +50,7 @@ class SecuredControllerTest {
 
     @Test
     @WithMockUser(roles = {"WRONG_ROLE"})
-    void getSecuredByRoleInfo_incorrectRole_shouldReturnReturnForbidden() throws Exception {
+    void getSecuredByRoleInfo_incorrectRole_shouldReturnForbidden() throws Exception {
         // Call and verify
         mockMvc.perform(get("/secured/has_role"))
                 .andExpect(status().isForbidden());
